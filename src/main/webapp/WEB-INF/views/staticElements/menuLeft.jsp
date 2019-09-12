@@ -13,8 +13,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/app-schedules.html">
-            <span>Struktura ZHP</span>
+        <a class="nav-link" href="/account/my-children/add">
+            <span>Przypisz dziecko</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
@@ -27,12 +27,6 @@
     <li class="nav-item">
         <a class="nav-link disabled" href="/app-edit-password.html">
             <span>Zmień hasło</span>
-            <i class="fas fa-angle-right"></i>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/super-admin-users.html">
-            <span>Użytkownicy</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>

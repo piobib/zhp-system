@@ -15,5 +15,9 @@ INSERT INTO `user_role` (`user_id`, `role_id`) VALUES (3, 3);
 INSERT INTO `user_role` (`user_id`, `role_id`) VALUES (4, 4);
 
 INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) VALUES ('Jan', 'Nowak', '5805739', '86052815599', 1);
-INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) VALUES ('Jan', 'Nowak', '5805739', '86052815599', 1);
-INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) VALUES ('Jan', 'Nowak', '5805739', '86052815599', 1);
+INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) VALUES ('Jan', 'Nowak', '5805739', '86058515599', 1);
+INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) VALUES ('Jan', 'Nowak', '5805739', '86048815599', 1);
+
+INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghdfgdsh', 1, 1);
+INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghddgtrrfgdsh', 1, 2);
+INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghdafgdsh', 1, 1);

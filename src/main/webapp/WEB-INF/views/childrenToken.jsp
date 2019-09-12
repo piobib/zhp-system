@@ -1,6 +1,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <sec:authorize access="isAuthenticated()">
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
     <%@include file="staticElements/header.jsp" %>
     <%@include file="staticElements/menuTopLogin.jsp" %>
@@ -10,18 +11,17 @@
 
             <div class="m-4 p-3 width-medium">
                 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-                    <a href="/account/children/add">Dodaj nowe dziecko</a>
-                    <table><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th></th>
-                        <c:forEach items="${children}" var="children">
+                    <a href="/account/children/newToken/${childrenId}">Utwórz nowy token</a>
+                    <table><th>Token</th><th>Wykorzystany</th><th>Data utworzenia</th>
+                        <c:forEach items="${childrenTokenList}" var="childrenTokenList">
                             <tr>
-                                <td><c:out value="${children.firstName}" default="Brak danych"/></td>
-                                <td><c:out value="${children.lastName}" default="Brak danych"/></td>
-                                <td><c:out value="${children.phone}" default="Brak danych"/></td>
-                                <td><a href="/account/children/edit/${children.id}">Edytuj</a></td>
-                                <td><a href="/account/children/tokens/${children.id}">Pokaż tokeny</a></td>
+                                <td><c:out value="${childrenTokenList.token}" default="Brak danych"/></td>
+                                <td><c:out value="${ childrenTokenList.active == 1 ? 'Nie' : 'Tak' }" default="Brak danych"/></td>
+                                <td><c:out value="${childrenTokenList.created}" default="Brak danych"/></td>
                             </tr>
                         </c:forEach>
                     </table>
+
                 </div>
             </div>
         </div>

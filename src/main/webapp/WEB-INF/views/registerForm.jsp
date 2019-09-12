@@ -25,7 +25,7 @@
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                        <button class="btn btn-color rounded-0" type="submit">Zaloguj</button>
+                        <button class="btn btn-color rounded-0" type="submit">Zarejestruj</button>
                     </form:form>
                 </div>
             </div>

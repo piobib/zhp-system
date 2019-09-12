@@ -5,19 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
+import org.springframework.lang.Nullable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@ToString
 public class Children {
 
     @Id
@@ -31,6 +30,7 @@ public class Children {
     private String lastName;
 
     @PESEL
+    @Nullable
     private String pesel;
 
     private String phone;
@@ -47,4 +47,6 @@ public class Children {
 
     private String city;
 
+    @OneToMany(mappedBy="children", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<ChildrenToken> tokens = new ArrayList<>();
 }

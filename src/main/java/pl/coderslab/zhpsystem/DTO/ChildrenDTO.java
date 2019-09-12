@@ -4,12 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
+import org.springframework.lang.Nullable;
+import pl.coderslab.zhpsystem.entity.ChildrenToken;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Null;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -42,5 +45,8 @@ public class ChildrenDTO {
     private String postCode;
 
     private String city;
+
+    @OneToMany(mappedBy="children", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<ChildrenTokenDTO> tokens = new ArrayList<>();
 
 }
