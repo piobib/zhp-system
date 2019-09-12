@@ -1,24 +1,20 @@
-package pl.coderslab.zhpsystem.entity;
+package pl.coderslab.zhpsystem.DTO;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
 @ToString
-public class Children {
+public class ChildrenDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
