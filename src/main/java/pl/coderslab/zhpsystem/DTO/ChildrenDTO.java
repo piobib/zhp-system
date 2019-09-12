@@ -6,13 +6,16 @@ import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
 import org.springframework.lang.Nullable;
 import pl.coderslab.zhpsystem.entity.ChildrenToken;
+import pl.coderslab.zhpsystem.entity.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Null;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -49,4 +52,6 @@ public class ChildrenDTO {
     @OneToMany(mappedBy="children", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ChildrenTokenDTO> tokens = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "childrens")
+    private Set<User> users = new HashSet<>();
 }

@@ -8,10 +8,12 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+import pl.coderslab.zhpsystem.entity.Children;
 import pl.coderslab.zhpsystem.entity.Role;
 import pl.coderslab.zhpsystem.validation.UserEditGroup;
 import pl.coderslab.zhpsystem.validation.UserRegistrationGroup;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
 
 @Setter
@@ -45,4 +47,12 @@ public class UserDTO {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "children_user",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "children_id") }
+    )
+    Set<Children> childrens = new HashSet<>();
 }

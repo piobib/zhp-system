@@ -20,5 +20,5 @@ public interface ChildrenService {
 
     void createNewToken(Long id);
 
-    boolean checkToken(String pesel, String token);
+    boolean checkToken(String pesel, String token, Long userId);
 }

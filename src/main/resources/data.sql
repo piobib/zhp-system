@@ -21,3 +21,4 @@ INSERT INTO `children` (`first_name`, `last_name`, `phone`, `pesel`, `active`) V
 INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghdfgdsh', 1, 1);
 INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghddgtrrfgdsh', 1, 2);
 INSERT INTO `children_token` (`token`, `active`, `children_id`) VALUES ('ghdafgdsh', 1, 1);
+

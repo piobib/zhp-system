@@ -16,4 +16,7 @@ public interface ChildrenTokenRepository  extends JpaRepository<ChildrenToken, L
 
     @Query("select t from ChildrenToken t where t.token=?1 and t.children=?2")
     ChildrenToken findTokenIdByTokenAndChildren(String token, Children children);
+
+    @Query(value = "insert into user_children ('children_id', 'user_id') values (1, 2)", nativeQuery = true)
+    void addChildrenToParent(Long childrenId, Long userId);
 }

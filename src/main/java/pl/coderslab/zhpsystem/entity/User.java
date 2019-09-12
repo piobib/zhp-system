@@ -46,6 +46,16 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "user_children",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "children_id") })
+    private Set<Children> childs = new HashSet<>();
+
     @PrePersist  //oznaczenie metody, która zostanie wykonana przez operacją Persist, czyli zapisem do bazy
     public void prePersist() {
         created = LocalDateTime.now();

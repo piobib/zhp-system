@@ -12,7 +12,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -49,4 +51,12 @@ public class Children {
 
     @OneToMany(mappedBy="children", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ChildrenToken> tokens = new ArrayList<>();
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "childs")
+    private Set<User> users = new HashSet<>();
 }

@@ -5,8 +5,10 @@ import pl.coderslab.zhpsystem.DTO.ChildrenDTO;
 import pl.coderslab.zhpsystem.DTO.ChildrenTokenDTO;
 import pl.coderslab.zhpsystem.entity.Children;
 import pl.coderslab.zhpsystem.entity.ChildrenToken;
+import pl.coderslab.zhpsystem.entity.User;
 import pl.coderslab.zhpsystem.repository.ChildrenRepository;
 import pl.coderslab.zhpsystem.repository.ChildrenTokenRepository;
+import pl.coderslab.zhpsystem.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +16,12 @@ import java.util.List;
 public class ChildrenServiceImpl implements ChildrenService{
 
     private final ChildrenRepository childrenRepository;
+    private final UserRepository userRepository;
     private final ChildrenTokenRepository childrenTokenRepository;
 
-    public ChildrenServiceImpl(ChildrenRepository childrenRepository, ChildrenTokenRepository childrenTokenRepository) {
+    public ChildrenServiceImpl(ChildrenRepository childrenRepository, UserRepository userRepository, ChildrenTokenRepository childrenTokenRepository) {
         this.childrenRepository = childrenRepository;
+        this.userRepository = userRepository;
         this.childrenTokenRepository = childrenTokenRepository;
     }
 
@@ -105,17 +109,31 @@ public class ChildrenServiceImpl implements ChildrenService{
 
     }
     @Override
-    public boolean checkToken(String pesel, String token){
+    public boolean checkToken(String pesel, String token, Long userId){
 
-        Children children = new Children();
+
+
+
+
+
+       Children children = new Children();
         try {
             children = childrenRepository.findChildrenByPesel(pesel);
             ChildrenToken childrenToken = new ChildrenToken();
             try {
                 childrenToken = childrenTokenRepository.findTokenIdByTokenAndChildren(token, children);
 
-                if(childrenToken.getChildren().getId().equals(children.getId()))
+                if(childrenToken.getChildren().getId().equals(children.getId())&&childrenToken.getActive()==1)
                 {
+                    User user = new User();
+                    user = userRepository.findUserById(userId);
+
+                    user.getChilds().add(children);
+                    children.getUsers().add(user);
+
+                    userRepository.save(user);
+                    childrenToken.setActive(0);
+                    childrenTokenRepository.save(childrenToken);
                     return true;
                 }
                 return false;
