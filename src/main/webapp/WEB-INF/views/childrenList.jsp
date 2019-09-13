@@ -10,15 +10,15 @@
 
             <div class="m-4 p-3 width-medium">
                 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-                    <a href="/account/children/add">Dodaj nowe dziecko</a>
-                    <table><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th></th>
+                    <a href="/account/children/add" class="link-style">Dodaj nowe dziecko</a>
+                    <table><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th></th><th></th>
                         <c:forEach items="${children}" var="children">
                             <tr>
                                 <td><c:out value="${children.firstName}" default="Brak danych"/></td>
                                 <td><c:out value="${children.lastName}" default="Brak danych"/></td>
                                 <td><c:out value="${children.phone}" default="Brak danych"/></td>
-                                <td><a href="/account/children/edit/${children.id}">Edytuj</a></td>
-                                <td><a href="/account/children/tokens/${children.id}">Pokaż tokeny</a></td>
+                                <td><a href="/account/children/edit/${children.id}" class="link-style">Edytuj</a></td>
+                                <td><a href="/account/children/tokens/${children.id}" class="link-style">Pokaż tokeny</a></td>
                             </tr>
                         </c:forEach>
                     </table>

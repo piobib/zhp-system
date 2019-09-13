@@ -6,11 +6,12 @@
     <%@include file="staticElements/menuTop.jsp" %>
     <section class="dashboard-section">
         <div class="container pt-4 pb-4">
-            <div class="border-dashed view-height">
+            <div class="border-dashed view-height margin-top-60">
                 <div class="container w-25">
                     <form:form method="POST" action="" modelAttribute="user" class="padding-small text-center">
+                        <img src="<%=request.getContextPath()%>/img/logoZHPsmall.png" class="logo-ZHP"/>
                         <h1 class="text-color-darker">Rejestracja</h1>
-                        <div class="form-group">
+                        <div class="form-group margin-top-30">
                             <form:errors path="username" cssClass="error"/>
                             <form:input path="username" type="text" class="form-control" id="username" name="username" placeholder="Podaj adres email" />
                         </div>
@@ -20,7 +21,7 @@
                                    placeholder="Podaj hasło" />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                            <input type="password" class="form-control radio-style" id="confirmPassword" name="confirmPassword"
                                    placeholder="Powtórz hasło" />
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -31,5 +32,4 @@
             </div>
         </div>
     </section>
-    <%@include file="staticElements/footer.jsp" %>
 </sec:authorize>

@@ -54,7 +54,7 @@ public class ChildrenController {
         newChildren.setFirstName(children.getFirstName());
         newChildren.setLastName(children.getLastName());
         newChildren.setPesel(children.getPesel());
-
+        newChildren.setActive(1);
         childrenRepository.save(newChildren);
 
 
@@ -81,16 +81,15 @@ public class ChildrenController {
 
         return "redirect:/account/children";
     }
-
+    @Secured({"ROLE_ADMIN", "ROLE_TEACHER"})
     @GetMapping("/tokens/{id}")
     public String childrenToken(Model model, @PathVariable("id") long id) {
         model.addAttribute("childrenTokenList", childrenServiceImpl.findTokensByChildrenId(id));
         model.addAttribute("childrenId", id);
         return "childrenToken";
     }
-
+    @Secured({"ROLE_ADMIN", "ROLE_TEACHER"})
     @GetMapping("/newToken/{id}")
-
     public String childrenCreateToken(@PathVariable("id") long id) {
 
         childrenServiceImpl.createNewToken(id);

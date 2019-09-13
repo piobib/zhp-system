@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @Controller
-@Secured({"ROLE_ADMIN", "ROLE_TEACHER", "ROLE_SUBTEACHER"})
+@Secured({"ROLE_ADMIN", "ROLE_TEACHER", "ROLE_SUBTEACHER", "ROLE_PARENT"})
 @RequestMapping("/account/my-children")
 public class MyChildrenController {
 

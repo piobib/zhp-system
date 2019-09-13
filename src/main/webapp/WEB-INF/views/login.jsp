@@ -5,11 +5,12 @@
     <%@include file="staticElements/menuTop.jsp" %>
     <section class="dashboard-section">
         <div class="container pt-4 pb-4">
-            <div class="border-dashed view-height">
+            <div class="border-dashed view-height margin-top-60">
                 <div class="container w-25">
                     <form method="POST" class="padding-small text-center">
+                        <img src="<%=request.getContextPath()%>/img/logoZHPsmall.png" class="logo-ZHP"/>
                         <h1 class="text-color-darker">Logowanie</h1>
-                        <div class="form-group">
+                        <div class="form-group margin-top-30">
                             <input type="text" class="form-control" id="username" name="username"
                                    placeholder="Podaj adres email" autofocus>
                         </div>
@@ -24,5 +25,5 @@
             </div>
         </div>
     </section>
-    <%@include file="staticElements/footer.jsp" %>
+
 </sec:authorize>

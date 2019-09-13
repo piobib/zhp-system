@@ -17,8 +17,6 @@
                                 <td><c:out value="${children.firstName}" default="Brak danych"/></td>
                                 <td><c:out value="${children.lastName}" default="Brak danych"/></td>
                                 <td><c:out value="${children.phone}" default="Brak danych"/></td>
-                                <td><a href="/account/children/edit/${children.id}">Edytuj</a></td>
-                                <td><a href="/account/children/tokens/${children.id}">Pokaż tokeny</a></td>
                             </tr>
                         </c:forEach>
                     </table>

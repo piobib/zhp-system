@@ -1,0 +1,72 @@
+.body-background {
+    background-image: url("/img/forest.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo-ZHP {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.margin-top-60 {
+    margin-top: 60px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.footer-position {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 2px solid rgb(134, 162, 12);
+}
+
+td {
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px dotted silver;
+}
+
+tr:hover {
+    background-color: orange;
+}
+
+.link-style {
+    font-weight: bold;
+    color: rgb(103, 128, 12);
+}
+.form-control {
+    margin-top: 20px !important;
+}
+.width-100{
+    width: 100%;
+}
+.radio-style{
+    font-size: 16px;
+
+}
+.align-left{
+    text-align: left;
+    font-size: 16px;
+
+}

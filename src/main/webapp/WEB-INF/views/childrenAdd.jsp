@@ -22,7 +22,7 @@
                             <form:input path="pesel" type="text" class="form-control" id="pesel" name="pesel" placeholder="Podaj PESEL dziecka" />
 
                         </div>
-                        <button class="btn btn-color rounded-0" type="submit">Zarejestruj</button>
+                        <button class="btn btn-color rounded-0" type="submit">Dodaj nowe dziecko</button>
                     </form:form>
 
                 </div>

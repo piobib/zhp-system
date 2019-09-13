@@ -17,11 +17,11 @@
 
                     <form method="post" action="" accept-charset="UTF-8">
 
-                        <input type="text" name="pesel" value="${pesel}" placeholder="Wprowadź PESEL dziecka"/>
-                        <input type="text" name="token" value="${token}" placeholder="Wprowadź otrzymany token"/>
+                        <input type="text" name="pesel" class="form-control" value="${pesel}" placeholder="Wprowadź PESEL dziecka"/>
+                        <input type="text" name="token" class="form-control" value="${token}" placeholder="Wprowadź otrzymany token"/>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                        <input type="submit"/>
+                        <input type="submit" class="btn btn-color rounded-0 margin-top-30" value="Kliknij, aby przypisać dziecko"/>
 
                     </form>
 

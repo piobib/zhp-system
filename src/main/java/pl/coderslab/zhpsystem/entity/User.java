@@ -4,12 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import pl.coderslab.zhpsystem.validation.UserEditGroup;
+import pl.coderslab.zhpsystem.validation.UserEditPassword;
 import pl.coderslab.zhpsystem.validation.UserRegistrationGroup;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -38,7 +40,7 @@ public class User {
 
     private Integer enabled;
 
-    @NotEmpty(groups=UserRegistrationGroup.class)
+    @NotEmpty(groups={UserRegistrationGroup.class, UserEditPassword.class})
     private String password;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

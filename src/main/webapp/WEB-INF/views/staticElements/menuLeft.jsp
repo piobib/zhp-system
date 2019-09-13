@@ -25,7 +25,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="/app-edit-password.html">
+        <a class="nav-link disabled" href="/account/users/change-password">
             <span>Zmień hasło</span>
             <i class="fas fa-angle-right"></i>
         </a>

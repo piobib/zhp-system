@@ -59,4 +59,9 @@ public class Children {
             },
             mappedBy = "childs")
     private Set<User> users = new HashSet<>();
+
+    @PrePersist  //oznaczenie metody, która zostanie wykonana przez operacją Persist, czyli zapisem do bazy
+    public void prePersist() {
+        created = LocalDateTime.now();
+    }
 }

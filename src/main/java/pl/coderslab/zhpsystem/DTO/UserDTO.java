@@ -7,10 +7,12 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import pl.coderslab.zhpsystem.entity.Children;
 import pl.coderslab.zhpsystem.entity.Role;
 import pl.coderslab.zhpsystem.validation.UserEditGroup;
+import pl.coderslab.zhpsystem.validation.UserEditPassword;
 import pl.coderslab.zhpsystem.validation.UserRegistrationGroup;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -33,10 +35,10 @@ public class UserDTO {
     @NotEmpty(groups={UserRegistrationGroup.class, UserEditGroup.class})
     private String username;
 
-    @NotEmpty(groups=UserRegistrationGroup.class)
+    @NotEmpty(groups={UserRegistrationGroup.class, UserEditPassword.class})
     private String password;
 
-    @NotEmpty(groups=UserRegistrationGroup.class)
+    @NotEmpty(groups={UserRegistrationGroup.class, UserEditPassword.class})
     private String confirmPassword;
 
     private LocalDateTime created;

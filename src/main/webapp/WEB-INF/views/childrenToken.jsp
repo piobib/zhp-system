@@ -11,7 +11,7 @@
 
             <div class="m-4 p-3 width-medium">
                 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-                    <a href="/account/children/newToken/${childrenId}">Utwórz nowy token</a>
+                    <a href="/account/children/newToken/${childrenId}" class="link-style">Utwórz nowy token</a>
                     <table><th>Token</th><th>Wykorzystany</th><th>Data utworzenia</th>
                         <c:forEach items="${childrenTokenList}" var="childrenTokenList">
                             <tr>
