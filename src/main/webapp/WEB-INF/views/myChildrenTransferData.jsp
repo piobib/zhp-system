@@ -10,17 +10,20 @@
 
             <div class="m-4 p-3 width-medium">
                 <div class="dashboard-content border-dashed p-3 m-4 view-height">
-
-                    <table><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th></th><th></th>
-                        <c:forEach items="${children}" var="children">
-                            <tr>
-                                <td><c:out value="${children.firstName}" default="Brak danych"/></td>
-                                <td><c:out value="${children.lastName}" default="Brak danych"/></td>
-                                <td><c:out value="${children.phone}" default="Brak danych"/></td>
-                                <td><a href="/account/my-children/transfer-data/${children.id}" class="link-style">Dane do przelewu</a></td>
-                            </tr>
-                        </c:forEach>
+                    <h4>Składki prosimy przelewać na następujące dane:</h4>
+                    <table class="margin-top-30">
+                        <tr>
+                            <td>Numer konta:</td>
+                            <td>45 3453 3453 3453 2342 1234 2323</td>
+                        </tr>
+                        <tr>
+                            <td>Tytuł przelewu:</td>
+                            <td><c:out value="${transferData}" default="Brak danych"/></td>
+                        </tr>
                     </table>
+                    <h5 class="margin-top-30 error">Prosimy o dokładne skopiowanie tytułu przelewu i nie dokonywanie żadnych zmian</h5>
+
+
 
                 </div>
             </div>

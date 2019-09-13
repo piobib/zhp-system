@@ -61,6 +61,13 @@ public class MyChildrenController {
                 "children", childrenServiceImpl.getAllChildrenByParentId(loggedUser)
         ));
     }
+    @GetMapping("/transfer-data/{id}")
+    public String myChildrenTransferData(Model model, @PathVariable("id") long id) {
+        String transferData = childrenServiceImpl.createTransferData(id);
+        model.addAttribute("transferData", transferData);
+        return "myChildrenTransferData";
+
+    }
 
 
 }

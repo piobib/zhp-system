@@ -74,12 +74,20 @@ public class UserController {
     }
 
 
+
     @GetMapping("/admin")
     @ResponseBody
     public String admin(@AuthenticationPrincipal CurrentUser customUser) {
         User entityUser = customUser.getUser();
 
         return "Hello " + entityUser.getId();
+    }
+
+    @GetMapping("/login/error")
+    public String admin(Model model) {
+        model.addAttribute("error", true);
+
+        return "login";
     }
 
 

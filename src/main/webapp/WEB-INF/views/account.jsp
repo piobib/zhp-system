@@ -10,6 +10,7 @@
         <div class="m-4 p-3 width-medium">
             <div class="dashboard-content border-dashed p-3 m-4 view-height">
 
+                <h3>Witaj w systemie ewidencyjnym ZHP</h3>
 
             </div>
         </div>

@@ -24,4 +24,6 @@ public interface ChildrenService {
     boolean checkToken(String pesel, String token, Long userId);
 
     List<ChildrenDTO> getAllChildrenByParentId(Long loggedUser);
+
+    String createTransferData(Long id);
 }

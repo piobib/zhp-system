@@ -1,4 +1,14 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<sec:authorize access="isAuthenticated()">
+
+
+    <%
+        String redirectURL = "/account";
+        response.sendRedirect(redirectURL);
+    %>
+
+
+</sec:authorize>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <sec:authorize access="isAnonymous()">
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -8,9 +18,9 @@
         <div class="container pt-4 pb-4">
             <div class="border-dashed view-height margin-top-60">
                 <div class="container w-25">
-                    <form:form method="POST" action="" modelAttribute="user" class="padding-small text-center">
+                    <form:form method="POST" action="" modelAttribute="user" class="padding-small text-center width-400">
                         <img src="<%=request.getContextPath()%>/img/logoZHPsmall.png" class="logo-ZHP"/>
-                        <h1 class="text-color-darker">Rejestracja</h1>
+                        <h2 class="text-color-darker">Rejestracja</h2>
                         <div class="form-group margin-top-30">
                             <form:errors path="username" cssClass="error"/>
                             <form:input path="username" type="text" class="form-control" id="username" name="username" placeholder="Podaj adres email" />

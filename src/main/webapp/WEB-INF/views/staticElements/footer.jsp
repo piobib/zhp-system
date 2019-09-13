@@ -1,6 +1,6 @@
 <footer class="footer-section pt-3 pb-3 footer-position">
     <div class="container text-center">
-        <h5 class="text-light">Copyright <span class="footer-text-color">eHarcerz.pl</span></h5>
+        <h5 class="text-light">Copyright <span class="footer-text-color">e-Harcerz.pl</span></h5>
     </div>
 </footer>
 

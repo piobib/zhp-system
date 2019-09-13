@@ -6,8 +6,8 @@
 }
 
 .logo-ZHP {
-    width: 100%;
-    margin-bottom: 40px;
+    width: 40%;
+    margin-bottom: 20px;
 }
 
 .margin-top-30 {
@@ -19,16 +19,17 @@
 }
 
 .error {
-    color: red;
-    font-size: 14px;
+    color: brown;
+    font-size: 15px;
     line-height: 30px;
     font-weight: bold;
 }
 
 .footer-position {
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     width: 100%;
+    background-color: black;
 }
 
 table {
@@ -69,4 +70,19 @@ tr:hover {
     text-align: left;
     font-size: 16px;
 
+}
+h1{
+    color: red;
+}
+.logout{
+    background-color: rgb(134, 162, 12);
+    color: white;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+}
+.width-400{
+    width: 400px;
 }

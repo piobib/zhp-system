@@ -62,11 +62,11 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         User existing = findByUserName(userDto.getUsername());
         if (existing != null) {
-            ex.addError(new ObjectError("username", "There is already an account registered with that email"));
+            ex.addError(new ObjectError("username", "W systemie istnieje już użytkownik o takim adresie email"));
 //            result.rejectValue("username", null, "There is already an account registered with that email");
         }
         if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
-            ex.addError(new ObjectError("password", "Password2 are incorrect"));//            result.rejectValue("password", null, "Password2 are incorrect");
+            ex.addError(new ObjectError("password", "Błąd potwierdzenia hasła, podane hasła nie są zgodne"));//            result.rejectValue("password", null, "Password2 are incorrect");
         }
         if (ex.hasErrors()) {
             throw ex;

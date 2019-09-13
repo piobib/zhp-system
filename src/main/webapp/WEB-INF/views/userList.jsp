@@ -15,7 +15,7 @@
                             <tr>
                                 <td><c:out value="${user.username}" default="Brak danych"/></td>
                                 <td><c:out value="${user.created}" default="Brak danych"/></td>
-                                <td><c:out value="${user.enabled}" default="Brak danych"/></td>
+                                <td><c:out value="${user.enabled == 1 ? 'TAK' : 'NIE' }" default="Brak danych"/></td>
                                 <td><a href="/account/users/edit/${user.id}" class="link-style">Edytuj</a></td>
                             </tr>
                         </c:forEach>

@@ -24,11 +24,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/account").authenticated()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/").permitAll()
-
-
+                .and().exceptionHandling().accessDeniedPage("/403")
                 .and().formLogin()
                 .loginPage("/login")
-                .failureUrl("/login.html?error")
+                .failureUrl("/login/error")
                 .loginProcessingUrl("/login")
                 .defaultSuccessUrl("/account")
                 .and().logout().logoutSuccessUrl("/")

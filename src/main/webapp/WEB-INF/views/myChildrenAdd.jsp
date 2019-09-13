@@ -12,7 +12,7 @@
                 <div class="dashboard-content border-dashed p-3 m-4 view-height">
 
                     <c:if test="${not empty pesel}">
-                        Podano nieprawidłowe dane. Proszę spróbować jeszcze raz.
+                        <h3 class="error">Podano nieprawidłowe dane. Proszę spróbować jeszcze raz.</h3>
                     </c:if>
 
                     <form method="post" action="" accept-charset="UTF-8">

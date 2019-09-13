@@ -175,4 +175,13 @@ public class ChildrenServiceImpl implements ChildrenService{
         return (new String(str, 0, len));
     }
 
+    public String createTransferData(Long id){
+
+        Children children = new Children();
+        children = childrenRepository.findChildrenById(id);
+
+        String transferData = children.getFirstName() + "-" + children.getLastName()+"-"+children.getEvidenceNumber();
+        return transferData;
+    }
+
 }
