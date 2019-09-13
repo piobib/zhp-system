@@ -111,11 +111,6 @@ public class ChildrenServiceImpl implements ChildrenService{
     @Override
     public boolean checkToken(String pesel, String token, Long userId){
 
-
-
-
-
-
        Children children = new Children();
         try {
             children = childrenRepository.findChildrenByPesel(pesel);
@@ -148,6 +143,26 @@ public class ChildrenServiceImpl implements ChildrenService{
 
 
     }
+
+    @Override
+    public List<ChildrenDTO> getAllChildrenByParentId(Long loggedUser){
+
+        List<Children> childrenList = childrenRepository.findAllChildrenByParentId(loggedUser);
+        List<ChildrenDTO> childrenListDto = new ArrayList<>();
+        for (int i = 0; i < childrenList.size(); i++) {
+            ChildrenDTO currentChildren = new ChildrenDTO();
+            currentChildren.setId(childrenList.get(i).getId());
+            currentChildren.setFirstName(childrenList.get(i).getFirstName());
+            currentChildren.setLastName(childrenList.get(i).getLastName());
+            currentChildren.setPhone(childrenList.get(i).getPhone());
+
+            childrenListDto.add(currentChildren);
+        }
+        return childrenListDto;
+
+
+}
+
     private static String randomString(int len)
     {
         char[] str = new char[100];

@@ -5,6 +5,7 @@ import pl.coderslab.zhpsystem.DTO.ChildrenDTO;
 import pl.coderslab.zhpsystem.DTO.ChildrenTokenDTO;
 import pl.coderslab.zhpsystem.DTO.UserDTO;
 import pl.coderslab.zhpsystem.entity.ChildrenToken;
+import pl.coderslab.zhpsystem.entity.User;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface ChildrenService {
     void createNewToken(Long id);
 
     boolean checkToken(String pesel, String token, Long userId);
+
+    List<ChildrenDTO> getAllChildrenByParentId(Long loggedUser);
 }

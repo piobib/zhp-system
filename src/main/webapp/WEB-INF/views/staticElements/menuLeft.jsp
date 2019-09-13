@@ -19,8 +19,8 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/app-edit-user-data.html">
-            <span>Edytuj dane</span>
+        <a class="nav-link" href="/account/my-children/list">
+            <span>Moje dzieci</span>
             <i class="fas fa-angle-right"></i>
         </a>
     </li>
