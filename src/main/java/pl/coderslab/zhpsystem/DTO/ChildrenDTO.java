@@ -4,13 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.validator.constraints.pl.PESEL;
-import org.springframework.lang.Nullable;
-import pl.coderslab.zhpsystem.entity.ChildrenToken;
 import pl.coderslab.zhpsystem.entity.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Null;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;

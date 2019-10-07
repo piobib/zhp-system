@@ -15,6 +15,8 @@ import pl.coderslab.zhpsystem.entity.Role;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service
@@ -41,11 +43,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setEnabled(1);
-        Role userRole = roleRepository.findByName("ROLE_PARENT");
+        user.setEnabled(0);
+        Role userRole = roleRepository.findByName("ROLE_DISABLED");
         Set<Role> roles = new HashSet<Role>();
         roles.add(userRole);
         user.setRoles(roles);
+        user.setActToken(createNewToken());
         userRepository.save(user);
     }
 
@@ -75,7 +78,7 @@ public class UserServiceImpl implements UserService {
         user.setUsername(userDto.getUsername());
         user.setPassword(userDto.getPassword());
         //todo :: save
-        userRepository.save(user);
+        //userRepository.save(user);
         return user;
     }
 
@@ -87,7 +90,7 @@ public class UserServiceImpl implements UserService {
             UserDTO currentUser = new UserDTO();
             currentUser.setUsername(userList.get(i).getUsername());
             currentUser.setId(userList.get(i).getId());
-            currentUser.setCreated(userList.get(i).getCreated());
+            currentUser.setCreated(formatDate(userList.get(i).getCreated()));
             currentUser.setEnabled(userList.get(i).getEnabled());
             userListDto.add(currentUser);
         }
@@ -106,5 +109,45 @@ public class UserServiceImpl implements UserService {
         editingUser.setEnabled(user.getEnabled());
         editingUser.setRoles(user.getRoles());
         return editingUser;
+    }
+
+    @Override
+    public String formatDate(LocalDateTime beforeFormatting){
+
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String afterFormatting = beforeFormatting.format(myFormatObj);
+        return afterFormatting;
+
+    }
+
+    @Override
+    public Boolean activationVerify(String email, String token){
+
+        User user = userRepository.findByUsernameAndActToken(email, token);
+
+        if(user.getId()>0) {
+            user.setEnabled(1);
+            Role userRole = roleRepository.findByName("ROLE_PARENT");
+            Set<Role> roles = new HashSet<Role>();
+            roles.add(userRole);
+            user.setRoles(roles);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String createNewToken(){
+
+        char[] str = new char[100];
+
+        for (int i = 0; i < 10; i++)
+        {
+            str[i] = (char) (((int)(Math.random() * 26)) + (int)'A');
+        }
+
+        return (new String(str, 0, 10));
+
     }
 }

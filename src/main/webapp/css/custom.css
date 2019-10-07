@@ -25,6 +25,13 @@
     font-weight: bold;
 }
 
+.notError{
+    color: darkgreen;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: bold;
+
+}
 .footer-position {
     position: fixed;
     bottom: 0px;
@@ -85,4 +92,10 @@ h1{
 }
 .width-400{
     width: 400px;
+}
+.margin-auto{
+    margin: auto;
+}
+.max-width-400{
+    max-width: 400px;
 }

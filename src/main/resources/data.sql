@@ -2,7 +2,7 @@ INSERT INTO `role` (`id`, `name`) VALUES (NULL, 'ROLE_ADMIN');
 INSERT INTO `role` (`id`, `name`) VALUES (NULL, 'ROLE_TEACHER');
 INSERT INTO `role` (`id`, `name`) VALUES (NULL, 'ROLE_SUBTEACHER');
 INSERT INTO `role` (`id`, `name`) VALUES (NULL, 'ROLE_PARENT');
-
+INSERT INTO `role` (`id`, `name`) VALUES (NULL, 'ROLE_DISABLED');
 
 INSERT INTO `user` (`created`, `username`, `password`, `enabled`) VALUES ('2019-09-09 18:00:00', 'admin@test.pl', '$2a$10$7yludK5VllyEIDmzaCpXaOBtk7eJ30kxx/vOoBz.1Twk1vZe3XuD.', 1);
 INSERT INTO `user` (`created`, `username`, `password`, `enabled`) VALUES ('2019-09-09 18:00:00', 'teacher@test.pl', '$2a$10$7yludK5VllyEIDmzaCpXaOBtk7eJ30kxx/vOoBz.1Twk1vZe3XuD.', 1);

@@ -41,9 +41,11 @@ public class UserDTO {
     @NotEmpty(groups={UserRegistrationGroup.class, UserEditPassword.class})
     private String confirmPassword;
 
-    private LocalDateTime created;
+    private String created;
 
     private Integer enabled;
+
+    private String actToken;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),

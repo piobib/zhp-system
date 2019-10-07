@@ -5,6 +5,7 @@ import pl.coderslab.zhpsystem.DTO.UserDTO;
 import pl.coderslab.zhpsystem.entity.User;
 import pl.coderslab.zhpsystem.exceptions.ValidationException;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public interface UserService {
@@ -18,4 +19,11 @@ public interface UserService {
     User authorization(UserDTO userDTO) throws ValidationException;
 
     List<UserDTO> getAllUsers();
-}
+
+    String formatDate(LocalDateTime beforeFormatting);
+
+    Boolean activationVerify(String email, String created);
+
+    String createNewToken();
+
+    }

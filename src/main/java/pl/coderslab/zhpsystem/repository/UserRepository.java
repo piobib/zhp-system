@@ -1,10 +1,12 @@
 package pl.coderslab.zhpsystem.repository;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.zhpsystem.entity.User;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,5 +20,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
    // @Query("select u from User u where u.id = ?1")
     //User findUserById(Long id);
     User findUserById(Long id);
+
+    User findByUsernameAndActToken(String email, String token);
+
+
+
+
 
 }

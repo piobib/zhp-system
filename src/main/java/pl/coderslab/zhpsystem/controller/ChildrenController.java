@@ -8,14 +8,10 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import pl.coderslab.zhpsystem.DTO.ChildrenDTO;
-import pl.coderslab.zhpsystem.DTO.ChildrenTokenDTO;
-import pl.coderslab.zhpsystem.DTO.UserDTO;
 import pl.coderslab.zhpsystem.entity.Children;
 import pl.coderslab.zhpsystem.repository.ChildrenRepository;
 import pl.coderslab.zhpsystem.service.ChildrenServiceImpl;
-import pl.coderslab.zhpsystem.validation.UserEditGroup;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -73,7 +69,7 @@ public class ChildrenController {
     @PostMapping("/edit")
     public String childrenEditSave(@ModelAttribute("children") @Validated ChildrenDTO childrenDto, BindingResult result) {
 
-        if (result.hasErrors()) {    //sprawdza czy są błędy walidacji
+        if (result.hasErrors()) {
             return "childrenEdit";
         }
 

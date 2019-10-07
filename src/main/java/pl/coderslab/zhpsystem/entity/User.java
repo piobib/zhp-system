@@ -26,9 +26,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     private String firstName;
-
 
     private String lastName;
 
@@ -39,6 +37,8 @@ public class User {
     private LocalDateTime created;
 
     private Integer enabled;
+
+    private String actToken;
 
     @NotEmpty(groups={UserRegistrationGroup.class, UserEditPassword.class})
     private String password;

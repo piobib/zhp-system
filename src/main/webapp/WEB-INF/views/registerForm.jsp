@@ -17,8 +17,8 @@
     <section class="dashboard-section">
         <div class="container pt-4 pb-4">
             <div class="border-dashed view-height margin-top-60">
-                <div class="container w-25">
-                    <form:form method="POST" action="" modelAttribute="user" class="padding-small text-center width-400">
+                <div class="container max-width-400">
+                    <form:form method="POST" action="" modelAttribute="user" class="padding-small text-center margin-auto">
                         <img src="<%=request.getContextPath()%>/img/logoZHPsmall.png" class="logo-ZHP"/>
                         <h2 class="text-color-darker">Rejestracja</h2>
                         <div class="form-group margin-top-30">
